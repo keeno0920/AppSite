@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Slo Counter のサポートページ" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="robots" content="noindex, noarchive" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; img-src 'self' data:; base-uri 'self'; object-src 'none'; form-action 'none'; frame-ancestors 'none'; connect-src 'none'; upgrade-insecure-requests" />
+    <title>Support | Slo Counter</title>
+    <style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f7fb;
+  --bg-accent:
+    radial-gradient(circle at top left, rgba(61, 130, 246, 0.12), transparent 32%),
+    linear-gradient(180deg, #f8fbff 0%, #eef3fa 100%);
+  --card: rgba(255,255,255,.94);
+  --surface: #ffffff;
+  --surface-soft: rgba(255,255,255,.76);
+  --text: #18202c;
+  --muted: #5b687a;
+  --line: #d8e2f0;
+  --accent: #195fd1;
+  --accent-soft: rgba(25,95,209,.10);
+  --danger-soft: rgba(190, 55, 60, .10);
+  --danger: #a02c31;
+  --shadow: 0 22px 54px rgba(15,23,42,.09);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a1220;
+    --bg-accent:
+      radial-gradient(circle at top left, rgba(100,156,255,.16), transparent 32%),
+      linear-gradient(180deg, #0a1220 0%, #0d1729 100%);
+    --card: rgba(13,23,41,.92);
+    --surface: #101a2d;
+    --surface-soft: rgba(16,26,45,.76);
+    --text: #eef4ff;
+    --muted: #aec0da;
+    --line: rgba(174,192,218,.18);
+    --accent: #93b8ff;
+    --accent-soft: rgba(147,184,255,.12);
+    --danger-soft: rgba(255, 105, 115, .12);
+    --danger: #ff9aa2;
+    --shadow: 0 24px 60px rgba(0,0,0,.42);
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  background-image: var(--bg-accent);
+  color: var(--text);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+a {
+  color: var(--accent);
+  text-decoration-thickness: .08em;
+  text-underline-offset: .18em;
+}
+a:hover { text-decoration-thickness: .12em; }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -52px;
+  z-index: 100;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+.skip-link:focus { top: 12px; }
+.page-shell {
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 28px 16px 56px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: saturate(160%) blur(10px);
+  overflow: hidden;
+}
+.hero {
+  padding: 30px 24px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+h1, h2, h3, p, ul, ol, dl, dd { margin: 0; }
+h1 {
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  line-height: 1.16;
+  letter-spacing: -.02em;
+}
+.meta {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: .97rem;
+}
+.assist {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: .93rem;
+}
+.lede {
+  margin-top: 18px;
+  max-width: 70ch;
+}
+.tabs {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tabs a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.tabs a[aria-current="page"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+.tabs a:hover, .toc a:hover, .footer-nav a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.toc {
+  padding: 18px 24px 0;
+}
+.toc-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.toc a {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--text);
+  font-size: .95rem;
+}
+main { padding: 6px 24px 18px; }
+section { padding: 26px 0; }
+section + section { border-top: 1px solid var(--line); }
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+.section-intro {
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.stack > * + * { margin-top: 12px; }
+.policy-list, .ordered-list {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+.policy-list li + li, .ordered-list li + li { margin-top: 12px; }
+.note, .callout, .warning {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 18px;
+}
+.note {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+}
+.callout {
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.warning {
+  border: 1px solid rgba(160, 44, 49, .35);
+  background: var(--danger-soft);
+}
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.info-card {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: linear-gradient(180deg, var(--accent-soft), rgba(255,255,255,0));
+}
+.info-card h3 {
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+.info-card p {
+  color: var(--muted);
+  font-size: .96rem;
+}
+dl.details {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+dl.details div {
+  padding: 14px 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+dl.details dt {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+dl.details dd {
+  color: var(--muted);
+}
+.replace {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px dashed rgba(160, 44, 49, .55);
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-weight: 700;
+}
+footer {
+  padding: 20px 24px 26px;
+  border-top: 1px solid var(--line);
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+}
+.footer-meta {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .94rem;
+}
+.small { font-size: .95rem; color: var(--muted); }
+@media (max-width: 640px) {
+  .hero, .toc, main, footer { padding-left: 18px; padding-right: 18px; }
+  .page-shell { padding: 18px 10px 40px; }
+}
+</style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">本文へ移動</a>
+    <div class="page-shell">
+      <article class="card">
+        <header class="hero">
+          <p class="eyebrow">Slo Counter · Support</p>
+          <h1>サポート</h1>
+          <p class="meta">最終更新日: 2026年3月10日</p>
+          <p class="assist" lang="en">For App Review: This page is intended to be used as the Support URL for the Japan release of the app.</p>
+          <p class="lede">問い合わせ窓口、課金に関する案内、関連ポリシーへのリンクをまとめたサポートページです。App Store Connect の Support URL として利用しやすいよう整理しています。</p>
+          <nav class="tabs" aria-label="ページ切り替え">
+            <a href="./index.html">Privacy Policy</a>
+            <a href="./terms.html">Terms of Use</a>
+            <a href="./support.html" aria-current="page">Support</a>
+          </nav>
+        </header>
+        <div class="toc" aria-label="目次">
+          <div class="toc-inner">
+            <a href="#contact-details">問い合わせ先</a>
+            <a href="#support-scope">対応内容</a>
+            <a href="#before-contact">問い合わせ前</a>
+            <a href="#purchase-help">課金案内</a>
+            <a href="#policy-links">関連ページ</a>
+            <a href="#privacy-notice">個人情報</a>
+          </div>
+        </div>
+        <main id="main">
+
+<section id="contact-details">
+  <h2>1. 問い合わせ先</h2>
+  <p class="section-intro">このページは、App Store Connect の Support URL として利用しやすいよう、問い合わせ導線と関連ポリシーをまとめています。</p>
+  <dl class="details">
+    <div>
+      <dt>サポートメール</dt>
+      <dd><a href="mailto:appjiajibu@gmail.com><span class="replace">appjiajibu@gmail.com</span></a></dd>
+    </div>
+  </dl>
+</section>
+
+<section id="support-scope">
+  <h2>2. 対応できる内容</h2>
+  <div class="grid">
+    <article class="info-card">
+      <h3>アプリの不具合</h3>
+      <p>起動しない、表示が崩れる、記録が期待どおりに動かないなどの不具合連絡。</p>
+    </article>
+    <article class="info-card">
+      <h3>利用方法の質問</h3>
+      <p>基本操作、設定方法、データの扱い、サブスクリプション関連の一般的な案内。</p>
+    </article>
+    <article class="info-card">
+      <h3>改善要望</h3>
+      <p>機能追加、使い勝手改善、表示や文言に関するフィードバック。</p>
+    </article>
+  </div>
+  <div class="note small">原則として日本語での案内を想定しています。</div>
+</section>
+
+<section id="before-contact">
+  <h2>3. 問い合わせ時にあると助かる情報</h2>
+  <ul class="policy-list">
+    <li>アプリ名とアプリのバージョン</li>
+    <li>iPhone / iPad の機種名と OS バージョン</li>
+    <li>発生している事象の詳細、再現手順、発生日時</li>
+    <li>必要に応じて、個人情報が写り込んでいないスクリーンショット</li>
+  </ul>
+</section>
+
+<section id="purchase-help">
+  <h2>4. 課金・サブスクリプションに関する案内</h2>
+  <div class="stack">
+    <p>購入、請求、解約、返金可否は Apple の購入フローと Apple Account に基づいて処理されます。開発者は App Store 決済そのものを代行しません。</p>
+    <ul class="policy-list">
+      <li>サブスクリプションの管理・解約: <a href="https://support.apple.com/ja-jp/118428" target="_blank" rel="noopener noreferrer">Apple サポート（解約方法）</a></li>
+      <li>返金の案内: <a href="https://support.apple.com/ja-jp/118223" target="_blank" rel="noopener noreferrer">Apple サポート（返金手続き）</a></li>
+      <li>購入履歴・お支払い情報: <a href="https://support.apple.com/ja-jp/billing" target="_blank" rel="noopener noreferrer">Apple サポート（請求・購入）</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="policy-links">
+  <h2>5. 関連ページ</h2>
+  <dl class="details">
+    <div>
+      <dt>Privacy Policy</dt>
+      <dd><a href="./index.html">./index.html</a></dd>
+    </div>
+    <div>
+      <dt>Terms of Use</dt>
+      <dd><a href="./terms.html">./terms.html</a></dd>
+    </div>
+    <div>
+      <dt>Apple 標準 EULA</dt>
+      <dd><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></dd>
+    </div>
+  </dl>
+</section>
+
+<section id="privacy-notice">
+  <h2>6. 個人情報の扱い</h2>
+  <div class="stack">
+    <p>サポート問い合わせに含まれる個人情報の取扱いは、<a href="./index.html">Privacy Policy</a> に従います。</p>
+    <p>本ページに掲載するメールアドレスは公開情報として扱われるため、公開前に、一般ユーザーに提示して差し支えない情報へ差し替えてください。</p>
+  </div>
+</section>
+
+        </main>
+        <footer>
+          <nav class="footer-nav" aria-label="関連ページ">
+            <a href="./index.html">Privacy Policy</a>
+            <a href="./terms.html">Terms of Use</a>
+            <a href="./support.html">Support</a>
+          </nav>
+          <p class="footer-meta">公開前に、Support ページ内のメールアドレスを実際のサポート窓口へ差し替えてください。</p>
+        </footer>
+      </article>
+    </div>
+  </body>
+</html>
