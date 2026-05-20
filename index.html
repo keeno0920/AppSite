@@ -293,9 +293,9 @@ footer {
         <header class="hero">
           <p class="eyebrow">Slo Counter · Japan Release</p>
           <h1>プライバシーポリシー</h1>
-          <p class="meta">最終更新日: 2026年3月10日</p>
-          <p class="assist" lang="en">For App Review: This page is prepared for the Japan release of the app. The controlling language is Japanese.</p>
-          <p class="lede">本アプリにおける個人情報および利用情報の取扱いを、日本向け公開の前提でわかりやすくまとめています。App Store に掲載する Privacy Policy URL として利用できる構成です。</p>
+          <p class="meta">最終更新日: 2026年5月20日</p>
+          <p class="assist">日本語本文を正文とします。</p>
+          <p class="lede">本アプリにおける個人情報および利用情報の取扱いをまとめています。</p>
           <nav class="tabs" aria-label="ページ切り替え">
             <a href="./index.html" aria-current="page">Privacy Policy</a>
             <a href="./terms.html">Terms of Use</a>
@@ -319,27 +319,27 @@ footer {
 <section id="scope">
   <h2>1. 適用範囲</h2>
   <div class="stack">
-    <p>このプライバシーポリシーは、iPhone / iPad 向けアプリ「Slo Counter」（以下「本アプリ」）に適用されます。本ページは、日本国内向けの公開を前提として作成しています。</p>
-    <p>本アプリの実際のデータ取扱いは、App Store Connect の App Privacy 回答や、本アプリに組み込まれている機能・SDK と一致する必要があります。将来、収集項目や外部送信の有無が変わる場合は、本ポリシーも更新します。</p>
-    <div class="note small">このページは、App Store に掲載する Privacy Policy URL として利用しやすいよう、公開用の静的ページとして構成しています。</div>
+    <p>このプライバシーポリシーは、iPhone / iPad 向けアプリ「Slo Counter」（以下「本アプリ」）に適用されます。</p>
+    <p>本アプリに組み込まれている機能、SDK、外部サービスの利用状況が変わる場合は、本ポリシーも更新します。</p>
   </div>
 </section>
 
 <section id="data-collected">
   <h2>2. 取得する情報</h2>
-  <p class="section-intro">現行版の想定に基づく取得・取扱いは次のとおりです。</p>
+  <p class="section-intro">本アプリが取り扱う主な情報は次のとおりです。</p>
   <ul class="policy-list">
-    <li>本アプリ内でユーザーが作成・入力したデータ（例: カウンター、メモ、設定など）。</li>
-    <li>サブスクリプションやアプリ内課金の利用可否を判定するために Apple の仕組みから取得される購入状態・レシート関連情報。</li>
+    <li>本アプリ内でユーザーが作成・入力したデータ（例: 機種、シーン、カウンター、数値、計算行、文字列、テンプレート、設定、JSONバックアップに含まれる内容など）。</li>
+    <li>アプリ内課金・自動更新サブスクリプションの利用可否を判定するために Apple の仕組みから取得される購入状態・レシート関連情報。</li>
     <li>ユーザーがサポート問い合わせ時に任意で送信する情報（メール本文、端末情報、スクリーンショット等）。</li>
   </ul>
-  <div class="callout small">現行想定では、開発者独自の会員登録、独自ログイン、独自クラウド保存を前提としていません。</div>
+  <div class="callout small">本アプリは、開発者が運営する独自の会員登録、独自ログイン、独自サーバーへのデータ保存機能を提供していません。ユーザーがiCloud Drive等へJSONを書き出す場合、その保存先での取扱いはApple等の各サービス提供者の規約・プライバシーポリシーに従います。</div>
 </section>
 
 <section id="purpose">
   <h2>3. 利用目的</h2>
   <ul class="policy-list">
     <li>本アプリの基本機能を端末上で動作させ、ユーザーが作成した記録や設定を表示・保持するため。</li>
+    <li>ユーザーの操作に基づき、JSONバックアップの書き出しや読み込みを行うため。</li>
     <li>購入済み機能やサブスクリプションの提供可否を確認するため。</li>
     <li>不具合調査、サポート対応、ユーザーからの問い合わせ対応のため。</li>
     <li>法令上必要な対応や、権利保護のために必要な範囲で利用するため。</li>
@@ -349,8 +349,9 @@ footer {
 <section id="sharing">
   <h2>4. 外部送信・第三者提供</h2>
   <div class="stack">
-    <p>ユーザーが本アプリ内で作成した主要データは、現行想定では端末内に保存されます。開発者が管理する独自サーバーへ常時送信・保管する設計は前提としていません。</p>
-    <p>一方で、決済・課金・サブスクリプション管理は Apple の仕組みを通じて行われます。そのため、Apple が処理する範囲の情報については Apple の規約・プライバシー方針が適用されます。</p>
+    <p>ユーザーが本アプリ内で作成した主要データは、端末内に保存されます。ユーザーがバックアップ操作を行った場合、JSONファイルはユーザーが選択したiCloud Drive、ファイルアプリ等の保存先に作成または読み込みされます。開発者が管理する独自サーバーへ常時送信・保管する設計ではありません。</p>
+    <p>決済・課金・サブスクリプション管理は Apple の仕組みを通じて行われます。そのため、Apple が処理する範囲の情報については Apple の規約・プライバシー方針が適用されます。</p>
+    <p>本アプリは、開発者が利用状況を収集するための広告SDKや第三者分析SDKを組み込んでいません。</p>
     <p>開発者は、法令に基づく場合を除き、個人情報を第三者へ販売しません。</p>
   </div>
 </section>
@@ -368,6 +369,7 @@ footer {
   <h2>6. 保存期間と削除</h2>
   <ul class="policy-list">
     <li>端末内に保存されるデータは、アプリの削除、端末の初期化、バックアップ状況などにより失われる場合があります。</li>
+    <li>JSONバックアップは、ユーザーが選択した保存先で管理されます。保存先からの削除や共有設定は、各保存先の機能に従ってユーザーが管理します。</li>
     <li>サポート問い合わせにより受領したメール等は、対応完了後も、問い合わせ履歴管理や再発防止のために合理的な期間保存することがあります。</li>
     <li>法令上保存が必要な場合は、その期間に従います。</li>
   </ul>
@@ -412,7 +414,7 @@ footer {
             <a href="./terms.html">Terms of Use</a>
             <a href="./support.html">Support</a>
           </nav>
-          <p class="footer-meta">日本語本文を正文とします。サポート連絡先は Support ページに掲載してください。</p>
+          <p class="footer-meta">日本語本文を正文とします。サポート連絡先は Support ページに掲載しています。</p>
         </footer>
       </article>
     </div>
